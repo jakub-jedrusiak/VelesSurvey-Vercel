@@ -26,7 +26,7 @@ def submit_survey(request, survey_id):
         data = {"id": data_raw.pop("id")}
         data.update(data_raw)
 
-        uri = str(config("MONGO_URI"))
+        uri = str(config("MONGODB_URI"))
         client = MongoClient(uri, server_api=ServerApi("1"))
         database = client["VelesResponses"]
         collection = database[str(survey_id)]
