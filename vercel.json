@@ -3,6 +3,7 @@
       {
         "src": "VelesSurvey/wsgi.py",
         "use": "@vercel/python",
+        "runtime": "python3.11",
         "config": { "maxLambdaSize": "15mb" }
       },
       {
