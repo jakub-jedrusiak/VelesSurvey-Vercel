@@ -8,6 +8,11 @@ from pymongo.server_api import ServerApi
 from decouple import config
 
 
+def index(request):
+    """Render the index page."""
+    return render(request, "index.html")
+
+
 def fill_survey(request, survey_id):
     """Render the survey form."""
     return render(request, "fill_survey.html", {"survey_id": survey_id})
