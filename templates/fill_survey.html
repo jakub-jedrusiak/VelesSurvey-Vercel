@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://velesbucket.s3.eu-north-1.amazonaws.com/images/Veles-rune-gray.svg"/>
+    <title>VelesSurvey</title>
+    <head>
+        <script defer="defer" src="{% static survey_id|add:'/main.js' %}"></script>
+    </head>
+    <body style="background-color: #f3f3f3">
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+    </body>
+    {% comment %} I'd be greatful if you left this footer as is {% endcomment %}
+    <footer>
+        <div style="text-align: center; opacity: 0.25; font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';">
+            <p>
+                Made with
+                <img src="https://velesbucket.s3.eu-north-1.amazonaws.com/images/Veles-logo-black.svg" style="display: inline; height: 1.5em; vertical-align: baseline;">
+            </p>
+        </div>
+    </footer>
+</html>

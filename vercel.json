@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "VelesSurvey/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "VelesSurvey/wsgi.py"
+      }
+    ]
+}
