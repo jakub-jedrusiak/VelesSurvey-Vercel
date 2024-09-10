@@ -1,8 +1,9 @@
 """Views for the VelesSurvey app."""
+
 import json
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import ensure_csrf_cookie
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from decouple import config
@@ -18,7 +19,7 @@ def fill_survey(request, survey_id):
     return render(request, "fill_survey.html", {"survey_id": survey_id})
 
 
-@csrf_exempt
+@ensure_csrf_cookie
 def submit_survey(request, survey_id):
     """Save the survey data."""
     if request.method == "POST":
