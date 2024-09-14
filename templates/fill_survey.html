@@ -9,6 +9,14 @@
   <head>
     <script defer="defer" src="{% static survey_id|add:'/main.js' %}"></script>
     <style>
+      #tryAgainButton {
+        background-color: #cc0000;
+      }
+      
+      #tryAgainButton:hover {
+        background-color: #b30000;
+      }
+      
       .lds-dual-ring {
         /* change color here */
         color: #19b394;
@@ -54,6 +62,9 @@
       <div style="text-align: center; padding-bottom: 2em; padding-top: 2em;">
         <div class="lds-dual-ring"></div>
       </div>
+    </div>
+    <div id="tryAgainDiv" style="text-align: center; padding-bottom: 2em; display: none;">
+      <button id="tryAgainButton" disabled class="sd-btn sd-btn--action">Try again</button>
     </div>
   </body>
   {% comment %}I'd be greatful if you left this footer as is{% endcomment %}
