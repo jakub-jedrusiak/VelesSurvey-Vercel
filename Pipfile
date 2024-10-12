@@ -11,6 +11,7 @@ pymongo = "*"
 python-decouple = "*"
 sqlparse = "*"
 whitenoise = "*"
+requests = "*"
 
 [dev-packages]
 

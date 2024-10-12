@@ -7,6 +7,7 @@
   <link rel="shortcut icon" type="image/png" href="https://velesbucket.s3.eu-north-1.amazonaws.com/images/Veles-rune-gray.svg" />
   <title>VelesSurvey</title>
   <head>
+    <script id="recaptchaScript" src="https://www.google.com/recaptcha/api.js?render={{ RECAPTCHA_SITE_KEY }}"></script>
     <script defer="defer" src="{% static survey_id|add:'/main.js' %}"></script>
     <style>
       #tryAgainButton {
