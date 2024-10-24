@@ -8,7 +8,7 @@
   <title>VelesSurvey</title>
   <head>
     <script id="recaptchaScript" src="https://www.google.com/recaptcha/api.js?render={{ RECAPTCHA_SITE_KEY }}"></script>
-    <script defer="defer" src="{% static survey_id|add:'/main.js' %}"></script>
+    <script rel="preload" defer="defer" src="{% static survey_id|add:'/main.js' %}"></script>
     <style>
       #tryAgainButton {
         background-color: #cc0000;

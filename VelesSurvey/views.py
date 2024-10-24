@@ -15,9 +15,10 @@ def index(request):
     return render(request, "index.html")
 
 
+@ensure_csrf_cookie
 def fill_survey(request, survey_id):
     """Render the survey form."""
-    return render(
+    response = render(
         request,
         "fill_survey.html",
         {
@@ -25,6 +26,12 @@ def fill_survey(request, survey_id):
             "RECAPTCHA_SITE_KEY": config("RECAPTCHA_SITE_KEY", cast=str, default=""),
         },
     )
+    response["X-Robots-Tag"] = "noindex"
+    # disable caching
+    response["Cache-Control"] = "no-cache, no-store, must-revalidate"  # HTTP 1.1.
+    response["Pragma"] = "no-cache"  # HTTP 1.0.
+    response["Expires"] = "0"  # Proxies.
+    return response
 
 
 @ensure_csrf_cookie
